@@ -12,15 +12,20 @@ def binary_search(ch, mass):
         return kon + 1
     else:
         return -1
+a = int(input())
+b = int(input())
+mass = []
+massinput = []
 file_name = "rozal_Rna_input.txt"
 file_name1 = "rozal_output.txt"
 f = open(file_name, 'r')
-a = readlines
-b = readlines
-mass.append([int(x) for x in readlines.split()])
-massinput = [int(x) for x in input().split()]
+mass = [int(x) for x in f.read().split()]
+massoutput = []
+massinput = mass[a:]
+mass = mass[0:a]
 f.close()
-massoutput =[]
 for i in range(len(massinput)):
     massoutput.append(binary_search(massinput[i], mass))
-print(massoutput)
+f = open(file_name1, 'w')
+f.write(' '.join([str(x) for x in massoutput]))
+f.close()
